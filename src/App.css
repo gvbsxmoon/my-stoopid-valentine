@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+/* RESET CSS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* MAIN CSS */
+#root,
+#__next {
+  width: 100vw;
+  height: 100vh;
+  isolation: isolate;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+body {
+  background-color: #F4E1E6;
+}
+
+.action {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.action .prompt,
+.action .button-container {
+  text-align: center;
+  font-family: "Pixelify Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  width: 100%;
+}
+
+.action .prompt {
+  padding-inline: 16px;
+  font-size: 32px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.button-container .first,
+.button-container .second {
+  border: 3px solid #151515;
+  padding-block: 4px;
+  font-size: 24px;
+  box-shadow: 0px 0px transparent;
+  transition: all .05s ease-in-out;
+  font-weight: 700;
+}
+
+.button-container .first:active,
+.button-container .second:active {
+  box-shadow: 4px 4px #F4A7B9;
+}
+
+.rive-assets {
+  width: 80vw;
+  height: 40vh;
+}
+
+.animation-container {
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+  height: 50v;
+  width: 80vw;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+
+.first {
+  background-color: white;
+}
+
+.second {
+  background-color: #ff6b6b;
+}
+
+.prompt {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}

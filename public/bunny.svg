@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+  <!-- Ears -->
+  <rect x="6" y="3" width="4" height="8" fill="#F4E1E6"/>
+  <rect x="18" y="3" width="4" height="8" fill="#F4E1E6"/>
+  <rect x="6" y="5" width="4" height="6" fill="#FFFFFF"/>
+  <rect x="18" y="5" width="4" height="6" fill="#FFFFFF"/>
+
+  <!-- Head -->
+  <rect x="4" y="9" width="20" height="16" fill="#FFFFFF" stroke="#F4E1E6" stroke-width="1"/>
+
+  <!-- Eyes -->
+  <rect x="10" y="13" width="2" height="2" fill="#000000"/>
+  <rect x="16" y="13" width="2" height="2" fill="#000000"/>
+
+  <!-- Nose -->
+  <rect x="13" y="18" width="2" height="2" fill="#000000"/>
+
+  <!-- Mouth -->
+  <rect x="12" y="19" width="2" height="2" fill="#000000"/>
+  <rect x="14" y="19" width="2" height="2" fill="#000000"/>
+
+  <!-- Cheeks -->
+  <rect x="7" y="17" width="3" height="3" fill="#F4A7B9"/>
+  <rect x="18" y="17" width="3" height="3" fill="#F4A7B9"/>
+</svg>

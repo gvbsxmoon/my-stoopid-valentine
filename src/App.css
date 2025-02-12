@@ -30,6 +30,7 @@ button,
 textarea,
 select {
   font: inherit;
+  color: #151515;
 }
 
 p,
@@ -156,7 +157,7 @@ body {
 
 .copyrights {
   position: absolute;
-  bottom: 12px;
+  top: 12px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -4,6 +4,7 @@ import clickSound from '@/assets/click.mp3';
 import successSound from '@/assets/success.mp3';
 import LovingRiveComponent from './components/LovingRiveComponent';
 import SmilingRiveComponent from './components/SmilingRiveComponent';
+import Copyrights from './components/Copyrights';
 
 const phrases: string[] = [
 	'Nope!',
@@ -59,25 +60,28 @@ const App: React.FC = () => {
 	}, []);
 
 	return (
-		<div id='container'>
-			{showLove ? <LovingRiveComponent /> : <SmilingRiveComponent />}
+		<>
+			<div id='container'>
+				{showLove ? <LovingRiveComponent /> : <SmilingRiveComponent />}
 
-			<div className='action'>
-				<p className='prompt'>{showLove ? "YAYYY! I'M SO HAPPY! ❤️" : "Hei hello, I'm here to ask you somethin! Would you be my valentine?"}</p>
+				<div className='action'>
+					<p className='prompt'>{showLove ? "YAYYY! I'M SO HAPPY! ❤️" : "Hei hello, I'm here to ask you somethin! Would you be my valentine?"}</p>
 
-				{!showLove && (
-					<div className='button-container'>
-						<button className='first' onClick={handleYesClick}>
-							YES I LOVE YOYO SO MUCH
-						</button>
+					{!showLove && (
+						<div className='button-container'>
+							<button className='first' onClick={handleYesClick}>
+								YES I LOVE YOYO SO MUCH
+							</button>
 
-						<button className='second' onClick={handleNoClick}>
-							{phrases[noButtonIndex]}
-						</button>
-					</div>
-				)}
+							<button className='second' onClick={handleNoClick}>
+								{phrases[noButtonIndex]}
+							</button>
+						</div>
+					)}
+				</div>
 			</div>
-		</div>
+			<Copyrights />
+		</>
 	);
 };
 

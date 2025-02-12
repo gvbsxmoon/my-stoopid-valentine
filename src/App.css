@@ -70,7 +70,7 @@ h6 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 12px;
 }
 
 body {
@@ -95,8 +95,8 @@ body {
 }
 
 .action .prompt {
-  padding-inline: 16px;
-  font-size: 32px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .button-container {
@@ -121,8 +121,8 @@ body {
 }
 
 .rive-assets {
-  width: 80vw;
-  height: 40dvh;
+  width: 95vw;
+  height: 44vh;
 }
 
 .animation-container {
@@ -150,7 +150,6 @@ body {
 }
 
 .prompt {
-  font-size: 1.5rem;
   margin-bottom: 2rem;
   transition: all 0.3s ease;
 }

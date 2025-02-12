@@ -59,7 +59,7 @@ h6 {
 #root,
 #__next {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   isolation: isolate;
 }
 
@@ -122,7 +122,7 @@ body {
 
 .rive-assets {
   width: 80vw;
-  height: 40vh;
+  height: 40dvh;
 }
 
 .animation-container {

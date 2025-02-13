@@ -1,7 +1,6 @@
 import './App.css';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import clickSound from '@/assets/click.mp3';
-import backgroundSound from '@/assets/background.mp3';
 import successSound from '@/assets/success.mp3';
 import LovingRiveComponent from './components/LovingRiveComponent';
 import SmilingRiveComponent from './components/SmilingRiveComponent';
@@ -40,11 +39,6 @@ const playSuccessSound = (): void => {
 	audio.play();
 };
 
-const playBackgroundSound = (): void => {
-	const audio = new Audio(backgroundSound);
-	audio.play();
-};
-
 const App: React.FC = () => {
 	const [showLove, setShowLove] = useState<boolean>(false);
 	const [noButtonIndex, setNoButtonIndex] = useState<number>(0);
@@ -64,8 +58,6 @@ const App: React.FC = () => {
 		playSuccessSound();
 		setShowLove(true);
 	}, []);
-
-	useEffect(playBackgroundSound, []);
 
 	return (
 		<>

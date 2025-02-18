@@ -65,12 +65,12 @@ const App: React.FC = () => {
 				{showLove ? <LovingRiveComponent /> : <SmilingRiveComponent />}
 
 				<div className='action'>
-					<p className='prompt'>{showLove ? "YAYYY! I'M SO HAPPY! ❤️" : "Hei hello, I'm here to ask you somethin! Would you be my valentine?"}</p>
+					<p className='prompt'>{showLove ? "YAYYY! I'M BRINGING PASTA! ❤️" : "Hei patata, San valentine is over... Would you now be my guanciale?"}</p>
 
 					{!showLove && (
 						<div className='button-container'>
 							<button className='first' onClick={handleYesClick}>
-								YES I LOVE YOYO SO MUCH
+								LET'S MAKE CARBONARA
 							</button>
 
 							<button className='second' onClick={handleNoClick}>

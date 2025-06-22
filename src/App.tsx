@@ -1,84 +1,63 @@
 import './App.css';
-import { useState, useCallback } from 'react';
-import clickSound from '@/assets/click.mp3';
-import successSound from '@/assets/success.mp3';
-import LovingRiveComponent from './components/LovingRiveComponent';
+import React, { useEffect, useState } from 'react';
+
 import SmilingRiveComponent from './components/SmilingRiveComponent';
 import Copyrights from './components/Copyrights';
 
-const phrases: string[] = [
-	'Nope!',
-	'Think again!',
-	'Really? :(',
-	'Are you sure?',
-	'Bunny is sad...',
-	'Please reconsider!',
-	'Give it another thought!',
-	"Don't make bunny cry!",
-	'One more chance?',
-	'But why? :(',
-	'My heart is breaking...',
-	'Maybe you misclicked?',
-	"I'll be so lonely...",
-	'Just one yes?',
-	'Pretty please?',
-	"Don't hop away!",
-	"Let's try again!",
-	"I'll be the best valentine!",
-	"You're breaking my fluffy heart!",
-	"But we're perfect together!",
-];
+const Countdown: React.FC<{ targetDate: string }> = ({ targetDate }) => {
+	const [timeLeft, setTimeLeft] = useState('00:00:00:00');
+	const [finished, setFinished] = useState(false);
 
-const playNoSound = (): void => {
-	const audio = new Audio(clickSound);
-	audio.play();
-};
+	const calculateTimeLeft = () => {
+		const diff = +new Date(targetDate) - +new Date();
+		if (diff <= 0) {
+			setFinished(true);
+			return '00:00:00:00';
+		}
 
-const playSuccessSound = (): void => {
-	const audio = new Audio(successSound);
-	audio.play();
+		const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+		const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+		const minutes = Math.floor((diff / 1000 / 60) % 60);
+		const seconds = Math.floor((diff / 1000) % 60);
+
+		return [String(days).padStart(2, '0'), String(hours).padStart(2, '0'), String(minutes).padStart(2, '0'), String(seconds).padStart(2, '0')].join(':');
+	};
+
+	useEffect(() => {
+		const update = () => {
+			const newTime = calculateTimeLeft();
+			setTimeLeft(newTime);
+		};
+
+		update();
+
+		const timer = setInterval(update, 1000);
+
+		return () => clearInterval(timer);
+	}, [targetDate]);
+
+	return (
+		<div className='countdown'>
+			{!finished ? (
+				<>
+					this poco <br />
+					<span>{timeLeft}</span>
+					<br />
+					and we gonna cuddle
+				</>
+			) : (
+				<span>I'm cooooooooming</span>
+			)}
+		</div>
+	);
 };
 
 const App: React.FC = () => {
-	const [showLove, setShowLove] = useState<boolean>(false);
-	const [noButtonIndex, setNoButtonIndex] = useState<number>(0);
-
-	const handleNoClick = useCallback(() => {
-		playNoSound();
-		setNoButtonIndex(prevIndex => {
-			let newIndex;
-			do {
-				newIndex = Math.floor(Math.random() * phrases.length);
-			} while (newIndex === prevIndex);
-			return newIndex;
-		});
-	}, []);
-
-	const handleYesClick = useCallback(() => {
-		playSuccessSound();
-		setShowLove(true);
-	}, []);
-
 	return (
 		<>
 			<div id='container'>
-				{showLove ? <LovingRiveComponent /> : <SmilingRiveComponent />}
-
-				<div className='action'>
-					<p className='prompt'>{showLove ? "YAYYY! I'M BRINGING PASTA! ❤️" : "Hei patata, San valentine is over... Would you now be my guanciale?"}</p>
-
-					{!showLove && (
-						<div className='button-container'>
-							<button className='first' onClick={handleYesClick}>
-								LET'S MAKE CARBONARA
-							</button>
-
-							<button className='second' onClick={handleNoClick}>
-								{phrases[noButtonIndex]}
-							</button>
-						</div>
-					)}
-				</div>
+				<SmilingRiveComponent />
+				<Countdown targetDate='2025-08-01T22:00:00+02:00' />
 			</div>
 			<Copyrights />
 		</>

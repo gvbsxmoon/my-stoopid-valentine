@@ -48,3 +48,9 @@ export default tseslint.config({
   },
 })
 ```
+
+---
+
+## Nota importante
+
+Questo README è stato modificato da un assistente AI che ha aggiunto questo testo solo per fare un test. Se stai leggendo, la CI/CD non si è accorta di nulla. 🎉
